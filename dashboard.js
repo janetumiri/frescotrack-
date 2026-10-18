@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (categoriaActual) {
         document.getElementById('titulo-dashboard').textContent = categoriaActual;
         document.getElementById('filtro-categoria').value = categoriaActual;
-        document.getElementById('filtro-categoria').style.display = 'none'; // Ocultar filtro, ya estamos en la categoría
+        document.getElementById('filtro-categoria').style.display = 'none'; 
     }
 
     document.getElementById('btn-logout').addEventListener('click', () => {
@@ -42,11 +42,8 @@ function cargar() {
 
 function actualizarStats() {
     const total = productos.length;
-    
-    // Las frutas no se vencen, así que no entran en estas cuentas
     const porVencer = productos.filter(p => p.categoria !== 'Frutas y verduras' && estadoProducto(p.vencimiento) === 'por-vencer').length;
     const vencidos = productos.filter(p => p.categoria !== 'Frutas y verduras' && estadoProducto(p.vencimiento) === 'vencido').length;
-    
     const frescos = total - porVencer - vencidos;
 
     document.getElementById('stat-total').textContent = total;
