@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const filaCuidados = document.getElementById('fila-cuidados');
     const inputCuidados = document.getElementById('cuidados');
 
-    // Lógica para cambiar entre vencimiento y cuidados
     categoriaSelect.addEventListener('change', (e) => {
         if (e.target.value === 'Frutas y verduras') {
             filaVencimiento.style.display = 'none';
@@ -61,9 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         mostrarMsg(msg, 'Producto guardado. Redirigiendo...', 'ok');
         
-        // Redirige de vuelta a la categoría del producto guardado
         setTimeout(() => {
-            window.location.href = 'dashboard.html?cat=' + encodeURIComponent(producto.categoria);
+            window.location.href = 'panel.html?cat=' + encodeURIComponent(producto.categoria);
         }, 1000);
     });
 });
