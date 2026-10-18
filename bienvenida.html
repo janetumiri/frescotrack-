@@ -4,11 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FrescoTrack - Bienvenida</title>
-    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="estilos.css">
 </head>
 <body class="auth-body">
 
-    <!-- Botón flotante del tema -->
     <button id="toggle-theme" class="theme-btn fixed">Modo Claro</button>
 
     <div class="auth-container welcome-container">
@@ -39,10 +38,9 @@
         </div>
     </div>
 
-    <script src="js/utilidades.js"></script>
+    <script src="utilidades.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Verificar que haya iniciado sesión
             if (!getUsuarioActual()) {
                 window.location.href = 'index.html';
                 return;
@@ -51,12 +49,10 @@
             const checkbox = document.getElementById('acepto-terminos');
             const btnComenzar = document.getElementById('btn-comenzar');
 
-            // Habilitar el botón solo si acepta
             checkbox.addEventListener('change', () => {
                 btnComenzar.disabled = !checkbox.checked;
             });
 
-            // Al hacer clic en comenzar, va a las categorías
             btnComenzar.addEventListener('click', () => {
                 window.location.href = 'categorias.html';
             });
