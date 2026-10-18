@@ -1,15 +1,9 @@
-// ============================================================
-// AUTENTICACIÓN - FrescoTrack
-// ============================================================
-
 document.addEventListener('DOMContentLoaded', () => {
-    // Si ya está logueado, ir directo a las categorías (o bienvenida si se prefiere)
     if (getUsuarioActual()) {
         window.location.href = 'categorias.html';
         return;
     }
 
-    // Control de las pestañas (Login / Registro)
     const tabs = document.querySelectorAll('.tab-btn');
     const forms = document.querySelectorAll('.auth-form');
     
@@ -22,7 +16,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // REGISTRO
     const formReg = document.getElementById('form-registro');
     formReg.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -58,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1500);
     });
 
-    // LOGIN
     const formLogin = document.getElementById('form-login');
     formLogin.addEventListener('submit', (e) => {
         e.preventDefault();
@@ -80,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
             email: user.email
         }));
         
-        // REDIRIGIR A LA PANTALLA DE BIENVENIDA AL INICIAR SESIÓN
         window.location.href = 'bienvenida.html'; 
     });
 });
