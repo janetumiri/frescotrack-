@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrescoTrack - Iniciar sesión</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="auth-body">
+
+    <button id="toggle-theme" class="theme-btn fixed">🌙</button>
+
+    <div class="auth-container">
+        <div class="auth-logo">
+            <!-- La manzana fue eliminada de aquí -->
+            <h1>FrescoTrack</h1>
+            <p>Controla tus productos y evita que se venzan</p>
+        </div>
+
+        <div class="auth-tabs">
+            <button class="tab-btn active" data-tab="login">Iniciar sesión</button>
+            <button class="tab-btn" data-tab="registro">Registrarse</button>
+        </div>
+
+        <!-- LOGIN -->
+        <form id="form-login" class="auth-form active">
+            <input type="text" id="login-usuario" placeholder="Usuario" required>
+            <input type="password" id="login-password" placeholder="Contraseña" required>
+            <button type="submit" class="btn-primary">Entrar</button>
+            <p id="login-msg" class="msg"></p>
+        </form>
+
+        <!-- REGISTRO -->
+        <form id="form-registro" class="auth-form">
+            <input type="text" id="reg-nombre" placeholder="Nombre completo" required>
+            <input type="text" id="reg-usuario" placeholder="Usuario" required>
+            <input type="email" id="reg-email" placeholder="Correo electrónico" required>
+            <input type="password" id="reg-password" placeholder="Contraseña (mín. 4)" required>
+            <button type="submit" class="btn-primary">Crear cuenta</button>
+            <p id="reg-msg" class="msg"></p>
+        </form>
+
+        <p class="auth-footer">
+            Escanea el código QR para acceder desde tu celular 📱
+        </p>
+    </div>
+
+    <script src="js/utilidades.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>

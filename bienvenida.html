@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrescoTrack - Bienvenida</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body class="auth-body">
+
+    <!-- Botón flotante del tema -->
+    <button id="toggle-theme" class="theme-btn fixed">Modo Claro</button>
+
+    <div class="auth-container welcome-container">
+        <div class="auth-logo">
+            <h1>Bienvenido a FrescoTrack</h1>
+            <p>Tu asistente personal de cocina y despensa</p>
+        </div>
+
+        <div class="welcome-content">
+            <p>Este sitio web te permite llevar un control total de los productos de tu hogar.</p>
+            <ul>
+                <li><strong>Organización:</strong> Separa tus productos por categorías (Lácteos, Carnes, Panadería, etc.).</li>
+                <li><strong>Control de vencimiento:</strong> Ingresa la fecha de vencimiento y el sistema te avisará cuando estén por caducar.</li>
+                <li><strong>Información nutricional:</strong> Lleva un registro de las calorías, grasas y proteínas de lo que consumís.</li>
+                <li><strong>Frutas y Verduras:</strong> Esta categoría es especial. No tiene fecha de vencimiento, sino que te permite guardar consejos sobre cómo conservarlas para que no se pudran.</li>
+            </ul>
+            <p>Para comenzar a usar el sistema, primero debés leer y aceptar los términos de uso.</p>
+        </div>
+
+        <div class="welcome-actions">
+            <label class="checkbox-container">
+                <input type="checkbox" id="acepto-terminos">
+                <span class="checkmark"></span>
+                Acepto y entiendo cómo funciona FrescoTrack.
+            </label>
+            
+            <button id="btn-comenzar" class="btn-primary" disabled>Comenzar</button>
+        </div>
+    </div>
+
+    <script src="js/utilidades.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Verificar que haya iniciado sesión
+            if (!getUsuarioActual()) {
+                window.location.href = 'index.html';
+                return;
+            }
+
+            const checkbox = document.getElementById('acepto-terminos');
+            const btnComenzar = document.getElementById('btn-comenzar');
+
+            // Habilitar el botón solo si acepta
+            checkbox.addEventListener('change', () => {
+                btnComenzar.disabled = !checkbox.checked;
+            });
+
+            // Al hacer clic en comenzar, va a las categorías
+            btnComenzar.addEventListener('click', () => {
+                window.location.href = 'categorias.html';
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrescoTrack - Dashboard</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <a href="categorias.html" class="icon-btn">&lt; Volver</a>
+            <h1 id="titulo-dashboard">FrescoTrack</h1>
+        </div>
+        <div class="header-right">
+            <span id="usuario-nombre" class="user-name"></span>
+            <button id="toggle-theme" class="icon-btn">Modo Oscuro</button>
+            <button id="btn-logout" class="icon-btn">Salir</button>
+        </div>
+    </header>
+
+    <main class="app-main">
+
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div>
+                    <h3 id="stat-total">0</h3>
+                    <p>Productos</p>
+                </div>
+            </div>
+            <div class="stat-card warn">
+                <div>
+                    <h3 id="stat-por-vencer">0</h3>
+                    <p>Por vencer</p>
+                </div>
+            </div>
+            <div class="stat-card danger">
+                <div>
+                    <h3 id="stat-vencidos">0</h3>
+                    <p>Vencidos</p>
+                </div>
+            </div>
+            <div class="stat-card ok">
+                <div>
+                    <h3 id="stat-frescos">0</h3>
+                    <p>En buen estado</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-columns">
+            <div class="dashboard-left">
+                <section id="alertas-container" class="alertas-container"></section>
+                <section class="chart-section">
+                    <h2>Distribución de macros</h2>
+                    <div class="chart-wrapper">
+                        <canvas id="grafico-macros"></canvas>
+                    </div>
+                </section>
+            </div>
+
+            <div class="dashboard-right">
+                <section class="controls">
+                    <input type="text" id="buscador" placeholder="Buscar producto...">
+                    <select id="filtro-categoria">
+                        <option value="">Todas las categorías</option>
+                        <option value="Lácteos">Lácteos</option>
+                        <option value="Frutas y verduras">Frutas y verduras</option>
+                        <option value="Carnes">Carnes</option>
+                        <option value="Panadería">Panadería</option>
+                        <option value="Bebidas">Bebidas</option>
+                        <option value="Enlatados">Enlatados</option>
+                        <option value="Snacks">Snacks</option>
+                        <option value="Otros">Otros</option>
+                    </select>
+                    <a href="agregar.html" class="btn-primary">+ Agregar</a>
+                </section>
+
+                <section id="productos-grid" class="productos-grid"></section>
+                <p id="sin-productos" class="sin-productos" style="display:none;">
+                    No hay productos en esta categoría todavía.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="js/utilidades.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

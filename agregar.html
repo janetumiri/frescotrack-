@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrescoTrack - Agregar producto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <a href="categorias.html" class="icon-btn">&lt; Volver</a>
+            <h1>Agregar Producto</h1>
+        </div>
+        <div class="header-right">
+            <button id="toggle-theme" class="icon-btn">Modo Oscuro</button>
+        </div>
+    </header>
+
+    <main class="app-main form-page-main">
+        <form id="form-producto" class="form-producto">
+
+            <div class="form-section">
+                <h3 class="section-title">Información Básica</h3>
+                <div class="form-row">
+                    <label>Nombre del producto *</label>
+                    <input type="text" id="nombre" required placeholder="Ej: Leche entera, Manzana roja, etc.">
+                </div>
+                <div class="form-row two-cols">
+                    <div>
+                        <label>Marca (opcional)</label>
+                        <input type="text" id="marca" placeholder="Ej: La Serenísima">
+                    </div>
+                    <div>
+                        <label>Categoría</label>
+                        <select id="categoria">
+                            <option>Lácteos</option>
+                            <option>Frutas y verduras</option>
+                            <option>Carnes</option>
+                            <option>Panadería</option>
+                            <option>Bebidas</option>
+                            <option>Enlatados</option>
+                            <option>Snacks</option>
+                            <option>Otros</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-title">Información Nutricional (por porción)</h3>
+                <div class="form-row three-cols">
+                    <div>
+                        <label>Calorías (kcal)</label>
+                        <input type="number" id="calorias" min="0" value="0">
+                    </div>
+                    <div>
+                        <label>Grasas (g)</label>
+                        <input type="number" id="grasas" min="0" step="0.1" value="0">
+                    </div>
+                    <div>
+                        <label>Proteínas (g)</label>
+                        <input type="number" id="proteinas" min="0" step="0.1" value="0">
+                    </div>
+                </div>
+                <div class="form-row three-cols" style="margin-top: 15px;">
+                    <div>
+                        <label>Carbohidratos (g)</label>
+                        <input type="number" id="carbohidratos" min="0" step="0.1" value="0">
+                    </div>
+                    <div>
+                        <label>Azúcar (g)</label>
+                        <input type="number" id="azucar" min="0" step="0.1" value="0">
+                    </div>
+                    <div>
+                        <label>Sodio (mg)</label>
+                        <input type="number" id="sodio" min="0" value="0">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-title">Stock y Conservación</h3>
+                <div class="form-row three-cols" id="fila-vencimiento">
+                    <div>
+                        <label>Fecha de vencimiento *</label>
+                        <input type="date" id="vencimiento" required>
+                    </div>
+                    <div>
+                        <label>Cantidad</label>
+                        <input type="number" id="cantidad" min="1" value="1">
+                    </div>
+                    <div>
+                        <label>Unidad</label>
+                        <select id="unidad">
+                            <option>unidad</option>
+                            <option>litro</option>
+                            <option>kg</option>
+                            <option>gramo</option>
+                            <option>paquete</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Este campo solo aparece para Frutas y Verduras -->
+                <div class="form-row" id="fila-cuidados" style="display:none;">
+                    <label>Consejos de conservación *</label>
+                    <textarea id="cuidados" rows="3" placeholder="Ej: Mantener en un lugar fresco y seco, lejos de la luz solar..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3 class="section-title">Notas adicionales</h3>
+                <div class="form-row">
+                    <textarea id="notas" rows="2" placeholder="Observaciones..."></textarea>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <a href="categorias.html" class="btn-secondary">Cancelar</a>
+                <button type="submit" class="btn-primary">Guardar Producto</button>
+            </div>
+
+            <p id="msg-form" class="msg"></p>
+        </form>
+    </main>
+
+    <script src="js/utilidades.js"></script>
+    <script src="js/producto.js"></script>
+</body>
+</html>

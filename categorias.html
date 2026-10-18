@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrescoTrack - Categorías</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="header-left">
+            <!-- Botón Hamburguesa (solo visible en celular) -->
+            <button id="btn-menu" class="icon-btn hamburger-btn">&#9776;</button>
+            <h1>FrescoTrack</h1>
+        </div>
+        <div class="header-right">
+            <span id="usuario-nombre" class="user-name"></span>
+            <button id="toggle-theme" class="icon-btn text-btn">Modo Oscuro</button>
+            <!-- Botón salir para PC -->
+            <button id="btn-logout" class="icon-btn desktop-logout">Salir</button>
+        </div>
+    </header>
+
+    <!-- Menú Lateral Deslizante (Celular) -->
+    <div id="menu-overlay" class="menu-overlay"></div>
+    <nav id="mobile-menu" class="mobile-menu">
+        <div class="menu-header">
+            <span id="menu-user-name">Mi Perfil</span>
+            <button id="close-menu" class="icon-btn">&times;</button>
+        </div>
+        <a href="categorias.html" class="menu-item">Inicio Categorías</a>
+        <a href="agregar.html" class="menu-item">Agregar Producto</a>
+        
+        <div class="menu-footer">
+            <button id="mobile-btn-logout" class="btn-primary" style="width: 100%;">Cerrar Sesión</button>
+        </div>
+    </nav>
+
+    <main class="app-main">
+        <h2 class="page-title">Selecciona una categoría</h2>
+        
+        <div class="categorias-grid">
+            <a href="dashboard.html?cat=Lácteos" class="cat-card">
+                <h3>Lácteos</h3>
+                <p>Leche, quesos y yogures</p>
+            </a>
+            <a href="dashboard.html?cat=Frutas y verduras" class="cat-card">
+                <h3>Frutas y Verduras</h3>
+                <p>Cuidados para que no se pudran</p>
+            </a>
+            <a href="dashboard.html?cat=Carnes" class="cat-card">
+                <h3>Carnes</h3>
+                <p>Carnes rojas y blancas</p>
+            </a>
+            <a href="dashboard.html?cat=Panadería" class="cat-card">
+                <h3>Panadería</h3>
+                <p>Panes y facturas</p>
+            </a>
+            <a href="dashboard.html?cat=Bebidas" class="cat-card">
+                <h3>Bebidas</h3>
+                <p>Jugos, gaseosas y aguas</p>
+            </a>
+            <a href="dashboard.html?cat=Enlatados" class="cat-card">
+                <h3>Enlatados</h3>
+                <p>Conservas y latas</p>
+            </a>
+            <a href="dashboard.html?cat=Snacks" class="cat-card">
+                <h3>Snacks</h3>
+                <p>Golosinas y picadas</p>
+            </a>
+            <a href="dashboard.html?cat=Otros" class="cat-card">
+                <h3>Otros</h3>
+                <p>Productos varios</p>
+            </a>
+        </div>
+    </main>
+
+    <script src="js/utilidades.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = verificarSesion();
+            if (!user) return;
+            
+            document.getElementById('usuario-nombre').textContent = 'Hola, ' + user.nombre;
+            document.getElementById('menu-user-name').textContent = 'Hola, ' + user.nombre;
+
+            // Lógica de Cerrar Sesión (sin cartel molesto)
+            const cerrarSesion = () => {
+                localStorage.removeItem('ft_usuario_actual');
+                window.location.href = 'index.html';
+            };
+            document.getElementById('btn-logout').addEventListener('click', cerrarSesion);
+            document.getElementById('mobile-btn-logout').addEventListener('click', cerrarSesion);
+
+            // Lógica del Menú Hamburguesa
+            const btnMenu = document.getElementById('btn-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenu = document.getElementById('close-menu');
+            const overlay = document.getElementById('menu-overlay');
+
+            const toggleMenu = () => {
+                mobileMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+            };
+
+            btnMenu.addEventListener('click', toggleMenu);
+            closeMenu.addEventListener('click', toggleMenu);
+            overlay.addEventListener('click', toggleMenu);
+        });
+    </script>
+</body>
+</html>
