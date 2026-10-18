@@ -1,5 +1,5 @@
 /* ============================================================
-   FRESCOTRACK - Estilos Globales (Fondo cálido y unificado)
+   FRESCOTRACK - Estilos Globales
    ============================================================ */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -49,7 +49,7 @@ body {
 }
 
 /* ============================================================
-   PANTALLA DE INICIO (LOGIN / REGISTRO) - INTEGRADA
+   PANTALLA DE INICIO (LOGIN / REGISTRO) - NÍTIDA
    ============================================================ */
 .auth-body {
     display: flex;
@@ -57,12 +57,8 @@ body {
     justify-content: center;
     padding: 20px;
     
-    /* Filtro cálido (marrón suave) sobre la imagen para que combine con el color del login */
-    background-image: linear-gradient(rgba(60, 50, 45, 0.3), rgba(60, 50, 45, 0.3)), 
-                      url('https://media.istockphoto.com/id/2167253729/es/foto/encimera-de-cocina-con-utensilios-verduras-y-especias-sobre-fondo-de-pared-de-ladrillo-espacio.jpg?s=612x612&w=0&k=20&c=dszwwr5oBShx_o0X4Otc66A5yxcbzPBPV8aXa1grdGA='); 
-    
-    /* Cuando quieras usar tu imagen local, borra el bloque de arriba y usa este: */
-    /* background-image: linear-gradient(rgba(60, 50, 45, 0.3), rgba(60, 50, 45, 0.3)), url('../img/fondo-login.jpg'); */
+    /* Imagen local en la raíz de GitHub */
+    background-image: url('fondo-login.jpg'); 
 
     background-size: cover;
     background-position: center;
@@ -71,26 +67,22 @@ body {
 }
 
 body.dark .auth-body {
-    /* Filtro oscuro cálido para el modo oscuro */
     background-image: linear-gradient(rgba(30, 25, 20, 0.75), rgba(30, 25, 20, 0.75)), 
-                      url('https://media.istockphoto.com/id/2167253729/es/foto/encimera-de-cocina-con-utensilios-verduras-y-especias-sobre-fondo-de-pared-de-ladrillo-espacio.jpg?s=612x612&w=0&k=20&c=dszwwr5oBShx_o0X4Otc66A5yxcbzPBPV8aXa1grdGA=');
+                      url('fondo-login.jpg');
 }
 
 .auth-container {
-    /* Fondo blanco cálido y semi-transparente (se integra mejor con la madera) */
-    background: rgba(253, 251, 249, 0.88); 
+    background: rgba(253, 251, 249, 0.95); 
     padding: 40px;
     border-radius: 20px;
-    /* Sombra suave */
     box-shadow: 0 20px 40px rgba(0,0,0,0.25); 
     width: 100%;
     max-width: 420px;
-    /* Borde blanco sutil */
     border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 body.dark .auth-container {
-    background: rgba(40, 38, 36, 0.92);
+    background: rgba(40, 38, 36, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -128,7 +120,6 @@ body.dark .auth-tabs { background: rgba(0, 0, 0, 0.4); }
     padding: 14px 16px;
     border: 1px solid var(--border);
     border-radius: 10px;
-    /* Inputs blancos para que se lea perfecto */
     background: #ffffff;
     color: var(--text);
     font-size: .95rem;
@@ -141,7 +132,6 @@ body.dark .auth-form input { background: #1E1E1E; }
 
 .auth-footer { text-align: center; color: var(--text-soft); font-size: .85rem; margin-top: 25px; }
 
-/* Botón del tema */
 .theme-btn.fixed {
     position: fixed; top: 20px; right: 20px; 
     background: rgba(253, 251, 249, 0.9);
@@ -159,10 +149,7 @@ body.dark .theme-btn.fixed {
 /* ============================================================
    PANTALLA DE BIENVENIDA
    ============================================================ */
-.welcome-container {
-    max-width: 600px;
-}
-
+.welcome-container { max-width: 600px; }
 .welcome-content {
     background: var(--bg);
     padding: 25px;
@@ -170,17 +157,13 @@ body.dark .theme-btn.fixed {
     border: 1px solid var(--border);
     margin-bottom: 25px;
 }
-
 .welcome-content p { font-size: 0.95rem; line-height: 1.5; margin-bottom: 15px; color: var(--text); }
 .welcome-content ul { margin-left: 20px; margin-bottom: 15px; }
 .welcome-content li { font-size: 0.95rem; line-height: 1.5; margin-bottom: 8px; color: var(--text-soft); }
 .welcome-content li strong { color: var(--text); }
-
 .welcome-actions { display: flex; flex-direction: column; gap: 20px; }
-
 .checkbox-container { display: flex; align-items: center; gap: 10px; cursor: pointer; font-size: 0.95rem; color: var(--text); font-weight: 600; }
 .checkbox-container input[type="checkbox"] { width: 20px; height: 20px; cursor: pointer; accent-color: var(--primary); }
-
 #btn-comenzar { width: 100%; opacity: 1; transition: opacity 0.3s; }
 #btn-comenzar:disabled { opacity: 0.5; cursor: not-allowed; transform: none; background: var(--text-soft); }
 
@@ -194,9 +177,7 @@ body.dark .theme-btn.fixed {
 }
 .header-left, .header-right { display: flex; align-items: center; gap: 12px; }
 .header-left h1 { font-size: 1.3rem; }
-
 .user-name { font-weight: 600; font-size: .9rem; color: var(--text-soft); }
-
 .icon-btn {
     background: transparent; border: 1px solid var(--border); color: var(--text);
     height: 40px; padding: 0 15px; border-radius: 20px; cursor: pointer; font-size: 0.85rem;
@@ -204,7 +185,6 @@ body.dark .theme-btn.fixed {
     text-decoration: none; transition: all .2s; font-weight: 600;
 }
 .icon-btn:hover { background: var(--bg); transform: scale(1.05); }
-
 .hamburger-btn { display: none; font-size: 1.2rem; padding: 0 12px; }
 
 .menu-overlay {
@@ -233,17 +213,8 @@ body.dark .theme-btn.fixed {
    MAIN Y CATEGORÍAS
    ============================================================ */
 .app-main { max-width: 1400px; margin: 0 auto; padding: 30px 20px 60px; }
-
-.page-title {
-    text-align: center;
-    margin-bottom: 40px;
-    color: var(--text);
-    font-size: 2rem;
-    font-weight: 700;
-}
-
+.page-title { text-align: center; margin-bottom: 40px; color: var(--text); font-size: 2rem; font-weight: 700; }
 .categorias-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-
 .cat-card {
     background: var(--bg-card); padding: 30px; border-radius: 16px;
     box-shadow: var(--shadow); text-decoration: none; color: var(--text);
@@ -251,7 +222,6 @@ body.dark .theme-btn.fixed {
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     min-height: 180px;
 }
-
 .cat-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .cat-card h3 { font-size: 1.4rem; margin-bottom: 10px; color: var(--primary); }
 .cat-card p { color: var(--text-soft); font-size: 0.95rem; }
@@ -327,58 +297,34 @@ body.dark .badge.danger { background: #3F2C2C; color: var(--danger); }
 .prod-info strong { color: var(--text); display: block; font-size: .95rem; }
 
 .prod-fecha { padding-top: 12px; border-top: 1px solid var(--border); font-size: .8rem; color: var(--text-soft); display: flex; justify-content: space-between; }
-
-.sin-productos {
-    text-align: center; color: var(--text-soft); padding: 40px 20px; font-size: 1.1rem;
-    background: var(--bg-card); border-radius: 14px; box-shadow: var(--shadow);
-}
+.sin-productos { text-align: center; color: var(--text-soft); padding: 40px 20px; font-size: 1.1rem; background: var(--bg-card); border-radius: 14px; box-shadow: var(--shadow); }
 
 /* ============================================================
    FORMULARIO DE AGREGAR PRODUCTO
    ============================================================ */
 .form-page-main { display: flex; justify-content: center; align-items: flex-start; padding-top: 40px; }
-
-.form-producto {
-    background: var(--bg-card); padding: 40px; border-radius: 20px;
-    box-shadow: var(--shadow); width: 100%; max-width: 800px;
-}
-
+.form-producto { background: var(--bg-card); padding: 40px; border-radius: 20px; box-shadow: var(--shadow); width: 100%; max-width: 800px; }
 .form-section { margin-bottom: 30px; padding-bottom: 25px; border-bottom: 1px solid var(--border); }
 .form-section:last-of-type { border-bottom: none; margin-bottom: 15px; }
-
 .section-title { font-size: 1.1rem; color: var(--text); margin-bottom: 20px; font-weight: 600; }
-
 .form-row { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
 .form-row.two-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-row.three-cols { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
-
 .form-row label { font-size: 0.9rem; font-weight: 600; color: var(--text-soft); }
-
 .form-row input, .form-row select, .form-row textarea {
     padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px;
     background: var(--bg); color: var(--text); font-family: inherit;
     font-size: 0.95rem; outline: none; transition: all 0.2s ease; width: 100%;
 }
-.form-row input:focus, .form-row select:focus, .form-row textarea:focus {
-    border-color: var(--primary); box-shadow: 0 0 0 3px rgba(163, 149, 134, 0.1);
-}
+.form-row input:focus, .form-row select:focus, .form-row textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(163, 149, 134, 0.1); }
 .form-row textarea { resize: vertical; min-height: 80px; }
-
 .form-actions { display: flex; justify-content: flex-end; gap: 15px; margin-top: 30px; }
 
-/* Botones Globales */
-.btn-primary, .btn-secondary {
-    padding: 14px 28px; border-radius: 10px; font-weight: 600;
-    font-size: 1rem; cursor: pointer; text-decoration: none;
-    text-align: center; transition: all 0.2s; border: none;
-}
-
+.btn-primary, .btn-secondary { padding: 14px 28px; border-radius: 10px; font-weight: 600; font-size: 1rem; cursor: pointer; text-decoration: none; text-align: center; transition: all 0.2s; border: none; }
 .btn-primary { background: var(--primary); color: #fff; }
 .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); }
-
 .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
 .btn-secondary:hover { background: var(--bg); }
-
 .msg { font-size: 0.9rem; text-align: center; margin-top: 15px; }
 .msg.error { color: var(--danger); }
 .msg.ok { color: var(--ok); }
@@ -386,16 +332,9 @@ body.dark .badge.danger { background: #3F2C2C; color: var(--danger); }
 /* ============================================================
    MODAL
    ============================================================ */
-.modal {
-    display: none; position: fixed; inset: 0; background: rgba(30, 30, 30, 0.6);
-    z-index: 200; align-items: center; justify-content: center; padding: 20px;
-}
+.modal { display: none; position: fixed; inset: 0; background: rgba(30, 30, 30, 0.6); z-index: 200; align-items: center; justify-content: center; padding: 20px; }
 .modal.active { display: flex; }
-.modal-content {
-    background: var(--bg-card); padding: 30px; border-radius: 16px;
-    max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto;
-    position: relative; animation: fadeIn .3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
+.modal-content { background: var(--bg-card); padding: 30px; border-radius: 16px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; animation: fadeIn .3s ease; box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
 .modal-close { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: var(--text-soft); line-height: 1; }
 .modal-close:hover { color: var(--danger); }
 .modal-content h2 { margin-bottom: 5px; }
@@ -410,33 +349,23 @@ body.dark .badge.danger { background: #3F2C2C; color: var(--danger); }
 @keyframes fadeIn { from { opacity: 0; transform: scale(.95); } to { opacity: 1; transform: scale(1); } }
 @keyframes slideIn { from { opacity: 0; transform: translateX(-20px); } to { opacity: 1; transform: translateX(0); } }
 
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
 @media (max-width: 900px) {
     .dashboard-columns { grid-template-columns: 1fr; }
 }
-
 @media (max-width: 768px) {
     .hamburger-btn { display: inline-flex; }
     .user-name, .desktop-logout { display: none; }
-    
     .app-header { padding: 12px 15px; }
     .app-main { padding: 15px 10px 40px; }
-    
     .stats-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
     .stat-card { padding: 15px; flex-direction: column; text-align: center; gap: 8px; }
-    
     .controls { flex-direction: column; align-items: stretch; }
     .controls input, .controls select, .controls .btn-primary { width: 100%; }
-    
     .productos-grid { grid-template-columns: 1fr; }
-    
     .form-producto { padding: 25px; }
     .form-row.two-cols, .form-row.three-cols { grid-template-columns: 1fr; gap: 15px; }
     .form-actions { flex-direction: column-reverse; }
     .btn-primary, .btn-secondary { width: 100%; }
-    
     .page-title { font-size: 1.5rem; margin-bottom: 20px; }
     .welcome-container { padding: 25px; }
 }
